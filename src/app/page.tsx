@@ -57,7 +57,7 @@ export default function Page() {
 
       const idToken = session.tokens?.idToken?.toString();
       const accessToken = session.tokens?.accessToken?.toString();
-      const refreshToken = session.tokens?.refreshToken?.toString();
+      // const refreshToken = session.tokens?.refreshToken?.toString();
        // payload gửi lên API
       const payload = {
         email: attrs.email ?? user?.signInDetails?.loginId ?? user?.username ?? '',
@@ -82,7 +82,7 @@ export default function Page() {
       console.log('✅ Attributes:', attrs);
       console.log('✅ ID Token:', idToken);
       console.log('✅ Access Token:', accessToken);
-      console.log('✅ Refresh Token:', refreshToken);
+      // console.log('✅ Refresh Token:', refreshToken);
 
       alert(`Logged in as ${attrs.email}\n\nID token (truncated): ${idToken?.slice(0, 40)}...`);
     } catch (e) {
