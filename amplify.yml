@@ -3,10 +3,15 @@ frontend:
   phases:
     preBuild:
       commands:
-        - cd $AMPLIFY_MONOREPO_APP_ROOT
+        - echo "App root: $AMPLIFY_MONOREPO_APP_ROOT"
+        - ls -la
+        - ls -la "$AMPLIFY_MONOREPO_APP_ROOT"
+        - cat "$AMPLIFY_MONOREPO_APP_ROOT/package.json" | grep '"next"' || true
+        - cd "$AMPLIFY_MONOREPO_APP_ROOT"
         - npm ci
     build:
       commands:
+        - cd "$AMPLIFY_MONOREPO_APP_ROOT"
         - npm run build
   artifacts:
     baseDirectory: $AMPLIFY_MONOREPO_APP_ROOT/.next
