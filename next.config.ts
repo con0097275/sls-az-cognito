@@ -1,9 +1,12 @@
-// next.config.ts
-import type { NextConfig } from 'next';
+import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
+const nextConfig = {
   reactStrictMode: true,
-  // ❌ do NOT add: output: 'export'
+  swcMinify: true,
+  images: {
+    unoptimized: true,
+  },
 };
 
+module.exports = nextConfig;
 export default nextConfig;
